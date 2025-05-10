@@ -7,10 +7,15 @@ export const ListItem = styled.li`
     justify-content: center;
     padding: 30px;
     list-style: none;
-    width: 280px;
+    width: 100%;
     max-width: 480px;
     background-color: skyblue;
     border-radius: 10px;
+
+    @media (min-width:768px) and (max-width:1199px) {
+        width: 167px;
+        padding: 10px;
+    }
 
     @media (min-width:1200px) {
         width: 370px;
@@ -29,4 +34,9 @@ export const Img = styled.img`
     height: 300px;
     object-fit: contain;
     border-radius: 10px;
+
+    @media (min-width:768px) and (max-width:1199px) {
+        width: 147px;
+        height: 147px;
+    }
 `;
