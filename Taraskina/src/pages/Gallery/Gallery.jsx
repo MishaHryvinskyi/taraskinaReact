@@ -1,10 +1,10 @@
-import ArtItem from "../components/ArtList/ArtItem";
-import { List } from "../components/ArtList/ArtList.styled";
-import { MainContainer } from "../Container.styled"
+import ArtItem from "../../components/ArtList/ArtItem";
+import { List } from "../../components/ArtList/ArtList.styled";
+import { MainContainer } from "../../Container.styled"
 import { useEffect, useState } from "react"
-import { getPaints } from "../API/api"
+import { getPaints } from "../../API/api"
 import { ClipLoader } from 'react-spinners'
-import { Link } from "react-router-dom";
+import { ListArt } from "./Gallery.styled";
 
 const Status = {
   PENDING: 'pending',
@@ -45,9 +45,9 @@ const Gallery = () => {
       <MainContainer>
          <List>
             {paintsList.paints.map(item => 
-            <Link key={item._id} to={`${item._id}`}>
+            <ListArt key={item._id} to={`${item._id}`}>
                  <ArtItem paintsList={item}/>
-            </Link>
+            </ListArt>
             )}
         </List>
       </MainContainer>

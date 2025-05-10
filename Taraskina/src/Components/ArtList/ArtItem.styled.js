@@ -38,7 +38,6 @@ export const Img = styled.img`
     background-color:  #407088; 
     height: 300px;
     object-fit: cover;
-    border: 2px solid #e7eaf6; 
     border-radius: 10px;
 
     @media (min-width:768px) and (max-width:1199px) {

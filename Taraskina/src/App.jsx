@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom"
 
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Gallery from "./pages/Gallery"
+import Gallery from "./pages/Gallery/Gallery"
 import OneArt from "./pages/OneArt"
 import Layout from "./components/ArtList/Layout/Layout"
 
