@@ -1,24 +1,24 @@
-import { Routes, Route, NavLink } from "react-router-dom"
-import ArtList from "./components/ArtList/ArtLists"
-import { MainContainer } from "./Container.styled"
+import { Routes, Route } from "react-router-dom"
+
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Gallery from "./pages/Gallery"
+import OneArt from "./pages/OneArt"
+import Layout from "./components/ArtList/Layout/Layout"
 
 function App() {
  return (
- <MainContainer>
-    <nav>
-        <ul>
-            <li><NavLink to="/">Домашня</NavLink></li>
-            <li><NavLink to="/galery">Галерея</NavLink></li>
-            <li><NavLink to="/about">Галерея</NavLink></li>
-        </ul>
-    </nav>
-    <Routes>
-        <Route path="/" element={<div>home</div>}/>
-        <Route path="/galery" element={<ArtList/>}/>
-        <Route path="/about" element={<div>Про мене</div>}/>
-    </Routes>
-  {/* <ArtList/> */}
- </MainContainer>)
+   <div style={{ backgroundColor: '#2a2438' }}>
+        <Routes>
+            <Route path="/" element={<Layout/>}>
+                <Route index element={<Home />}/>
+                <Route path="galery" element={<Gallery/>}/>
+                <Route path="galery/:id" element={<OneArt/>}/>
+                <Route path="about" element={<About />}/>
+            </Route>
+        </Routes>
+    </div>
+ )
 }
 
 export default App

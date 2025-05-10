@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const List = styled.ul`
-    padding: 0;
+    padding: 100px 0;
     margin: 0;
     display: grid;
     gap: 25px;

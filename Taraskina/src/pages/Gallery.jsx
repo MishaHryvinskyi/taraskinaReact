@@ -1,20 +1,20 @@
-import ArtItem from "./ArtItem";
-import { List } from "./ArtList.styled";
+import ArtItem from "../components/ArtList/ArtItem";
+import { List } from "../components/ArtList/ArtList.styled";
+import { MainContainer } from "../Container.styled"
 import { useEffect, useState } from "react"
-import { getPaints } from "../../API/api"
+import { getPaints } from "../API/api"
 import { ClipLoader } from 'react-spinners'
-import { MainContainer } from "../../Container.styled"
+import { Link } from "react-router-dom";
 
 const Status = {
-  IDLE: 'idle',
   PENDING: 'pending',
   REJECTED: 'rejected',
   RESOLVED: 'resolved'
 };
 
-const ArtList = () => {
+const Gallery = () => {
   const [paintsList, setPaintsList] = useState(null);
-   const [status, setStatus] = useState(Status.IDLE);
+  const [status, setStatus] = useState(Status.IDLE);
 
    useEffect(() => {
 
@@ -32,10 +32,6 @@ const ArtList = () => {
   
    },[]);
 
-   if(status === Status.IDLE) {
-    return <p>Очікуємо...</p>
-  }
-
   if(status === Status.PENDING) {
     return <ClipLoader color="#36d7b7" size={50} />
   }
@@ -45,13 +41,19 @@ const ArtList = () => {
   }
 
   if(status === Status.RESOLVED) {
-    return <List>
-    {paintsList.paints.map(item => 
-      <ArtItem key={item._id} paintsList={item}/>
-    )}
-  </List>
+    return (
+      <MainContainer>
+         <List>
+            {paintsList.paints.map(item => 
+            <Link key={item._id} to={`${item._id}`}>
+                 <ArtItem paintsList={item}/>
+            </Link>
+            )}
+        </List>
+      </MainContainer>
+    )
   }
 
 }
 
-export default ArtList;
+export default Gallery;
