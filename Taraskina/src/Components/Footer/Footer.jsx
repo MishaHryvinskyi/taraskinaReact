@@ -1,6 +1,5 @@
-import { FaPhone } from "react-icons/fa";
-import SocList from "./SocList";
-
+import SocList from "./SocList/SocList";
+import ContactsList from "./ContactsList/ContactsList";
 import { FooterStyled } from "./Footer.styled";
 
 const Footer = () => {
@@ -10,16 +9,7 @@ const Footer = () => {
             <div>
                 <p class="footer__discription">Taraskina &copy; 2023 Всі права захищено</p>
             </div>
-            <div>
-                <ul>
-                    <li>
-                         <a href="tel:380683391302"><FaPhone/>380683391302</a>
-                    </li>
-                    <li>
-                        <a href="mailto:ketrintaraskina@gmail.com">ketrintaraskina@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
+            <ContactsList />
         </FooterStyled>
     )
 }
