@@ -4,7 +4,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Gallery from "./pages/Gallery/Gallery"
 import OneArt from "./pages/OneArt"
-import Layout from "./components/ArtList/Layout/Layout"
+import Layout from "./components/Layout/Layout"
 
 function App() {
  return (
